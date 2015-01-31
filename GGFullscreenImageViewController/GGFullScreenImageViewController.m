@@ -28,6 +28,7 @@ static inline GGOrientation convertOrientation(UIInterfaceOrientation orientatio
         default:
             break;
     }
+    return GGOrientationPortrait;
 }
 
 static inline NSInteger RadianDifference(UIInterfaceOrientation from, UIInterfaceOrientation to) {
