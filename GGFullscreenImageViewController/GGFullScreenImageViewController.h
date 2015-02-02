@@ -19,5 +19,6 @@ typedef NS_ENUM(NSUInteger, GGOrientation) {
 
 @property (nonatomic, retain) UIImageView *liftedImageView;
 @property (nonatomic, assign) UIInterfaceOrientationMask supportedOrientations;
+@property (nonatomic, retain) UIViewController *containerVC;
 
 @end
