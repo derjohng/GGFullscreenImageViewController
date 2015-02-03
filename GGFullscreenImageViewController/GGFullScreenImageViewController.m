@@ -56,6 +56,8 @@ static inline NSInteger RadianDifference(UIInterfaceOrientation from, UIInterfac
     if (self) {
         self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         self.supportedOrientations = UIInterfaceOrientationMaskAll;
+        mOrigOrientation = [[[UIDevice currentDevice] valueForKey:@"orientation"] integerValue];
+        
     }
     return self;
 }
@@ -176,6 +178,7 @@ static inline NSInteger RadianDifference(UIInterfaceOrientation from, UIInterfac
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
+    
     [super viewWillDisappear:animated];
 
     UIApplication *app = [UIApplication sharedApplication];
@@ -257,7 +260,11 @@ static inline NSInteger RadianDifference(UIInterfaceOrientation from, UIInterfac
 #pragma mark - Private Methods
 
 - (void) onDismiss {
+    
+    [[UIDevice currentDevice] setValue:
+     [NSNumber numberWithInteger: mOrigOrientation] forKey:@"orientation"];
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 #pragma mark - Orientation

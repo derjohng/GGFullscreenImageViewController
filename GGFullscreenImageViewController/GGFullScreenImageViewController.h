@@ -16,9 +16,11 @@ typedef NS_ENUM(NSUInteger, GGOrientation) {
 };
 
 @interface GGFullscreenImageViewController : UIViewController
+{
+    NSInteger mOrigOrientation;
+}
 
 @property (nonatomic, retain) UIImageView *liftedImageView;
 @property (nonatomic, assign) UIInterfaceOrientationMask supportedOrientations;
-@property (nonatomic, retain) UIViewController *containerVC;
 
 @end
