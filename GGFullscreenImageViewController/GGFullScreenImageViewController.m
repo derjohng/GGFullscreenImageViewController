@@ -9,7 +9,7 @@
 #import "GGFullscreenImageViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const double kAnimationDuration = 0.3;
+static const double kAnimationDuration = 0.0;
 
 static inline GGOrientation convertOrientation(UIInterfaceOrientation orientation) {
     switch (orientation) {
