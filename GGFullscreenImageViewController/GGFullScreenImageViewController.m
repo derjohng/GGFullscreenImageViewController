@@ -156,8 +156,8 @@ static inline NSInteger RadianDifference(UIInterfaceOrientation from, UIInterfac
         maxWidth = MIN(endFrame.size.width, endFrame.size.height*imageSize.width/imageSize.height);
     } else {
         // 570/323 = x/568
-        maxHeight = MIN(endFrame.size.width,endFrame.size.height*imageSize.height/imageSize.width);
-        maxWidth = MIN(endFrame.size.height, endFrame.size.width*imageSize.width/imageSize.height);
+        maxHeight = MIN(endFrame.size.width,endFrame.size.height*imageSize.height/imageSize.width)*0.9;
+        maxWidth = MIN(endFrame.size.height, endFrame.size.width*imageSize.width/imageSize.height)*0.9;
     }
     scale.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, maxWidth, maxHeight)];
 
@@ -297,7 +297,6 @@ static inline NSInteger RadianDifference(UIInterfaceOrientation from, UIInterfac
 }
 
 #pragma mark - CAAnimationDelegate
-
 - (void) animationDidStart:(CAAnimation *)anim {
     if ([[anim valueForKey:@"type"] isEqual:@"expand"]) {
         self.liftedImageView.hidden = YES;
